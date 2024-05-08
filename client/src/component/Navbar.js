@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid bg-dark">
-        <div className="logo font-bold flex items-center me-4">
+        <div className="logo font-bold flex items-center me-4" style={{ marginLeft: '50px' }}>
         <img class="img-fluid" src={ carImage } alt="" style={{ maxWidth: '100px' }} />
 
         </div>

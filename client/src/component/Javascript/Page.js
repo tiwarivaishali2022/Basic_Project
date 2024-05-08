@@ -1,12 +1,11 @@
 import React from "react";
-import carImage2 from '../../assets/image.png';
-// import carImage3 from '../assets/carlogo.png';
-// import carImage4 from '../assets/carlogo.png';
-import Image from '../../assets/best seller.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
+import carImage2 from "../../assets/image.png";
+import Image from "../../assets/best seller.png";
 
-
-
-export default function () {
+export default function NewArrivals() {
   return (
     <div>
       <section className="pb-md-4 pb-2 pt-3">
@@ -16,47 +15,37 @@ export default function () {
           members for your services.
         </p>
         <div className="boxes row justify-content-center">
-          <div className="col-lg-4 col-md-6 mb-4" >
-            <div className="card">
-              <div className="card-body">
-              <img className="card-title img-fluid" src={carImage2} alt="" />
-
-                <ul className="list-unstyled">
-                  <li className="highlighted"></li>
-                
-                </ul>
-                <button className="btn btn-danger">ADD TO CART</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card">
-              <div className="card-body">
-              <img className="card-title img-fluid" src={carImage2} alt="" />
-               <ul className="list-unstyled">
-
-                </ul>
-                <button className="btn btn-danger">ADD TO CART</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card">
-              <div className="card-body ">
-                <img className="card-title img-fluid" src={carImage2} alt="" />
-                <ul className="list-unstyled">
-                  <li className="highlighted"></li>
-                  <li></li>
-    
-                </ul>
-                <button className="btn btn-danger">ADD TO CART</button>
-              </div>
-            </div>
-          </div>
+          <ProductCard imgSrc={carImage2} price="120.00" solidStars={5} regularStars={0} />
+          <ProductCard imgSrc={carImage2} price="150.00" solidStars={3} regularStars={2} />
+          <ProductCard imgSrc={carImage2} price="100.00" solidStars={0} regularStars={4} />
         </div>
       </section>
-    <img class="img-fluid" src={ Image } alt=""/>
+      <img className="img-fluid" src={Image} alt="" />
+    </div>
+  );
+}
 
+function ProductCard({ imgSrc, price, solidStars, regularStars }) {
+  return (
+    <div className="col-lg-4 col-md-6 mb-4">
+      <div className="card">
+        <div className="card-body">
+          <img className="card-title img-fluid" src={imgSrc} alt="" />
+          <ul className="list-unstyled">
+            <li>
+              {[...Array(solidStars)].map((_, index) => (
+                <FontAwesomeIcon key={index} icon={solidStar} className="text-warning" />
+              ))}
+              {[...Array(regularStars)].map((_, index) => (
+                <FontAwesomeIcon key={index} icon={regularStar} className="text-warning" />
+              ))}
+              <span className="ml-2">1 review</span>
+            </li>
+            <li className="highlighted text-danger">₹{price}</li>
+          </ul>
+          <button className="btn btn-danger">ADD TO CART</button>
+        </div>
+      </div>
     </div>
   );
 }
