@@ -5,7 +5,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/Javascript/Home";
 import Shop from "./component/Javascript/Shop";
 import Footer from './component/Footer';
-// import '@fortawesome/fontawesome-free/css/all.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import '@fortawesome/fontawesome-free/css/all.css';
+import Page from './component/Javascript/Page';
 
 
 
@@ -20,6 +23,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
+      <Page />
       <Footer/>
       
     </div>
