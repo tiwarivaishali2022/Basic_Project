@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import carImage from '../assets/carlogo.png';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 
 export default function Navbar() {
@@ -11,7 +14,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid bg-dark">
         <div className="logo font-bold flex items-center me-4" style={{ marginLeft: '50px' }}>
-        <img class="img-fluid" src={ carImage } alt="" style={{ maxWidth: '100px' }} />
+        <img className="img-fluid" src={ carImage } alt="" style={{ maxWidth: '100px' }} />
 
         </div>
         <button
@@ -23,7 +26,7 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon text-white"></span>
+          <span className="navbar-toggler-icon bg-light"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav d-flex flex-row">
@@ -33,7 +36,7 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="/about" className="nav-link text-light me-4">
+              <a href="/shop" className="nav-link text-light me-4">
                 SHOP
               </a>
             </li>
@@ -47,13 +50,13 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="d-flex justify-content-end mb-4 ">
-            <a href="#" className="text-reset me-4">
+            <a href="/search" className="text-reset me-4">
               <i className="fas fa-search me-3 text-white"></i>
             </a>
-            <a className="text-reset me-4">
+            <a href="/cart" className="text-reset me-4">
               <i className="fas fa-shopping-cart me-3 text-white"></i>
             </a>
-            <a className="text-reset me-4">
+            <a href="/user" className="text-reset me-4">
               <i className="fas fa-user me-3 text-white"></i>
             </a>
           </div>
